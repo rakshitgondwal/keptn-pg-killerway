@@ -1,7 +1,7 @@
 # -----------------------------------------#
 #        Setting Global variables          #
 # -----------------------------------------#
-DEBUG_VERSION=1
+DEBUG_VERSION=2
 K3D_VERSION=v5.3.0
 KUBECTL_VERSION=v1.22.6
 GH_CLI_VERSION=2.23.0
@@ -18,11 +18,11 @@ POD_WAIT_TIMEOUT_MINS=10
 curl -LO https://dl.k8s.io/release/$KUBECTL_VERSION/bin/linux/amd64/kubectl
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
-# -----------------------------------------#
-#    Step 2/10: Initialising Kubernetes    #
-# -----------------------------------------#
-curl -s https://raw.githubusercontent.com/rancher/k3d/main/install.sh | TAG=$K3D_VERSION bash
-k3d cluster create mykeptn -p "8080:80@loadbalancer" --k3s-arg "--no-deploy=traefik@server:*"
+# # -----------------------------------------#
+# #    Step 2/10: Initialising Kubernetes    #
+# # -----------------------------------------#
+# curl -s https://raw.githubusercontent.com/rancher/k3d/main/install.sh | TAG=$K3D_VERSION bash
+# k3d cluster create mykeptn -p "8080:80@loadbalancer" --k3s-arg "--no-deploy=traefik@server:*"
 
 # ----------------------------------------#
 #      Step 3/10: Installing Helm         #
